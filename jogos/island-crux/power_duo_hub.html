@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>Island Crux — POWER DUO</title>
+<title>Island Crux: Power Duo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <style>
@@ -121,7 +121,7 @@
 <div id="stageWrap"><div id="stage">
   <div id="hub">
     <div class="topbar">
-      <div class="title">ISLAND CRUX<small>Power Duo — desenvolvido por: Kafkaos</small><button class="gear-btn" onclick="saveGame()" title="Salvar progresso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h7V3M8 21v-7h8v7"/></svg></button><button class="gear-btn" onclick="openAbout()" title="Sobre & Configurações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></button></div>
+      <div class="title">ISLAND CRUX<small>Power Duo · desenvolvido por Kafkaos</small><button class="gear-btn" onclick="saveGame()" title="Salvar progresso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h7V3M8 21v-7h8v7"/></svg></button><button class="gear-btn" onclick="openAbout()" title="Sobre & Configurações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></button></div>
       <div class="status"><span class="lvlbadge" id="lvlBadge">Nv 1</span><span class="gold" id="goldDisplay">500</span><span class="pots" id="potsDisplay"></span></div>
     </div>
     <div class="hub-grid">
@@ -312,20 +312,20 @@ function artHTML(kind,key){
 }
 
 const HEROES = [
-  { name:"KAOS", role:"Guerreiro", art:"warrior", lore:"Mercenário lendário do arquipélago. Muralha viva: puxa o perigo pra si e derruba na força bruta. Ao lado de July, forma a dupla de aluguel mais temida dos mares.",
+  { name:"KAOS", role:"Guerreiro", art:"warrior", lore:"Mercenário lendário do arquipélago. É uma muralha viva: chama o perigo pra cima de si e resolve tudo na força bruta. Ao lado da July, forma a dupla de aluguel mais temida desses mares.",
     stats:{HP:160,MP:40,ATK:92,DEF:90,INT:20},
     actions:[
       {key:"golpe",name:"Golpe",short:"Golpe",icon:"sword",desc:"Ataque normal corpo-a-corpo.",mp:0,type:"phys",dmg:40,up:true},
-      {key:"investida",name:"Investida",short:"Investida",icon:"shield",desc:"Ataca e aumenta a defesa por 2 turnos.",mp:5,type:"phys_buff",dmg:32,buff:2,up:true},
-      {key:"giro",name:"Giro",short:"Giro",icon:"spin",desc:"Ataque em área se houver +1 inimigo.",mp:8,type:"phys_area",dmg:30,up:true},
+      {key:"investida",name:"Investida",short:"Investida",icon:"shield",desc:"Ataca e aumenta a defesa por 2 turnos.",mp:5,type:"phys_buff",dmg:30,buff:4,up:true},
+      {key:"giro",name:"Giro",short:"Giro",icon:"spin",desc:"Ataque em área se houver +1 inimigo.",mp:10,type:"phys_area",dmg:35,up:true},
       {key:"suborno",name:"Suborno",short:"Suborno",icon:"coin",desc:"Paga 5% do ouro pra tentar passar sem lutar. 1x, no início.",mp:0,type:"bribe",up:false}
     ]},
-  { name:"JULY", role:"Maga Arcanista & Healer", art:"mage", lore:"Arcanista famosa, mercenária ao lado de Kaos. Domina fogo, gelo e raio, e traz os aliados de volta. Frágil de corpo, avassaladora em magia.",
-    stats:{HP:95,MP:130,ATK:30,DEF:40,INT:95},
+  { name:"JULY", role:"Maga Arcanista & Healer", art:"mage", lore:"Arcanista famosa e parceira do Kaos de longa data. Comanda fogo, gelo e raio, e ainda traz os aliados de volta quando a coisa aperta. Frágil no corpo, mas devastadora na magia.",
+    stats:{HP:95,MP:140,ATK:30,DEF:40,INT:97},
     actions:[
-      {key:"golpe_cajado",name:"Golpe de Cajado",short:"Golpe",icon:"staff",desc:"Golpe físico com o cajado. Usa o Ataque (ATK), sem custo de mana.",mp:0,type:"phys",dmg:42,up:true},
-      {key:"congelar",name:"Raio Congelante",short:"Congelar",icon:"ice",desc:"Pouco dano em \u00e1rea, mas congela TODOS: perdem este e o pr\u00f3ximo turno.",mp:20,type:"freeze",dmg:6,freeze:2,up:true},
-      {key:"fogo",name:"Bola de Fogo",short:"Fogo",icon:"fire",desc:"Dano de fogo em área (todos).",mp:15,type:"mag_area",dmg:34,up:true},
+      {key:"golpe_cajado",name:"Golpe de Cajado",short:"Golpe",icon:"staff",desc:"Golpe físico com o cajado. Usa o Ataque (ATK), sem custo de mana.",mp:0,type:"phys",dmg:35,up:true},
+      {key:"congelar",name:"Raio Congelante",short:"Congelar",icon:"ice",desc:"Pouco dano em \u00e1rea, mas congela TODOS: perdem este e o pr\u00f3ximo turno.",mp:20,type:"freeze",dmg:5,freeze:2,up:true},
+      {key:"fogo",name:"Bola de Fogo",short:"Fogo",icon:"fire",desc:"Dano de fogo em área (todos).",mp:15,type:"mag_area",dmg:35,up:true},
       {key:"heal",name:"Heal",short:"Heal",icon:"heal",desc:"Cura 35% da vida de July E Kaos.",mp:20,type:"heal_all",pct:0.35,up:false}
     ]}
 ];
@@ -356,71 +356,51 @@ const SETS={
   oeste:{name:'das Areias',tint:'#e8c35a',pieces:{arma:'Cimitarra das Dunas',armadura:'Peitoral de Areia',botas:'Botas do Nômade',luvas:'Manoplas de Escorpião',amuleto:'Amuleto do Verme'}}
 };
 const ISLANDS = {
-  norte:{name:"Norte — Gélida",biome:"gelo",leader:"Mago de Gelo",leaderArt:"iceMage",done:0,kills:0,met:false},
-  sul:{name:"Sul — Vulcânica",biome:"fogo",leader:"Paladino de Fogo",leaderArt:"firePaladin",done:0,kills:0,met:false},
-  leste:{name:"Leste — Floresta",biome:"mata",leader:"Druida",leaderArt:"druid",done:0,kills:0,met:false},
-  oeste:{name:"Oeste — Deserto",biome:"deserto",leader:"Amazona",leaderArt:"amazon",done:0,kills:0,met:false},
-  centro:{name:"Central — Coração",biome:"grind",leader:"Ladino das Sombras",leaderArt:"guardian",done:0,kills:0,met:false}
+  norte:{name:"Norte Gélido",biome:"gelo",leader:"Mago de Gelo",leaderArt:"iceMage",lvb:0,done:0,kills:0,met:false},
+  sul:{name:"Sul Vulcânico",biome:"fogo",leader:"Paladino de Fogo",leaderArt:"firePaladin",lvb:1,done:0,kills:0,met:false},
+  leste:{name:"Leste da Floresta",biome:"mata",leader:"Druida",leaderArt:"druid",lvb:1,done:0,kills:0,met:false},
+  oeste:{name:"Oeste Desértico",biome:"deserto",leader:"Amazona",leaderArt:"amazon",lvb:2,done:0,kills:0,met:false},
+  centro:{name:"Coração Central",biome:"grind",leader:"Ladino das Sombras",leaderArt:"guardian",done:0,kills:0,met:false}
 };
 const QUESTS={
   norte:[
-    {target:"Elemental de Gelo",n:10,lore:"Elementais de Gelo congelam tudo que tocam nas trilhas da montanha."},
-    {target:"Coeurl",n:14,lore:"Coeurls espreitam na neve e paralisam presas com seus bigodes."},
-    {target:"Gárgula",n:19,lore:"Gárgulas ganharam vida no alto das torres e atacam quem passa."},
-    {target:"Golem de Pedra",n:23,lore:"Golens de Pedra bloqueiam as passagens para as minas de cristal."},
-    {target:"Troll",n:28,lore:"Trolls famintos descem das cavernas atrás de carne fresca."},
-    {target:"Ogro",n:32,lore:"Ogros saqueiam as despensas da vila toda noite."},
-    {target:"Espectro",n:37,lore:"Espectros vagam pelo cemitério gelado, gelando a alma dos vivos."},
-    {target:"Banshee",n:41,lore:"O lamento das Banshees anuncia morte nas noites de nevasca."},
-    {target:"Wraith",n:46,lore:"Wraiths encapuzados ceifam viajantes perdidos na geleira."},
-    {target:"Leviatã",n:50,lore:"Um cardume de Leviatãs infesta os lagos congelados."},
-    {boss:true,lore:"O <b>GIGANTE das montanhas desperta. Derrote-o para libertar o Norte.</b>"},
+    {target:"Espectro",n:20,lore:"Espectros vagam pelas geleiras e assombram os viajantes. Cace 20 Espectros e devolva a paz às trilhas."},
+    {target:"Coeurl",n:22,lore:"Os Coeurls caçam em bando e já levaram rebanhos inteiros. Abata 22 Coeurls antes que cheguem à vila."},
+    {target:"Troll",n:25,lore:"Trolls do gelo entupiram a passagem para as minas. Derrube 25 Trolls e reabra o caminho."},
+    {target:"Gárgula",n:28,lore:"Gárgulas tomaram as torres de vigia do Norte. Destrua 28 Gárgulas e retome os postos."},
+    {target:"Ogro",n:30,lore:"Ogros descem das montanhas em fúria. Cace 30 Ogros para segurar o avanço até o trono do Gigante."},
+    {boss:true,lore:"O <b>GIGANTE</b> das montanhas acordou. Ele guarda o Norte há séculos. Derrubem essa muralha viva e a ilha é de vocês."}
   ],
   sul:[
-    {target:"Elemental de Fogo",n:10,lore:"Elementais de Fogo incendeiam as encostas do vulcão."},
-    {target:"Ifrit",n:14,lore:"Ifrits invocam labaredas que consomem as plantações."},
-    {target:"Espírito Ígneo",n:19,lore:"Espíritos Ígneos dançam nas fendas de lava, ateando fogo."},
-    {target:"Bomb",n:23,lore:"Bombs flutuantes explodem ao menor toque nas cavernas."},
-    {target:"Imp",n:28,lore:"Imps travessos roubam e queimam tudo que encontram."},
-    {target:"Hobgoblin",n:32,lore:"Hobgoblins organizam bandos de saque nas estradas."},
-    {target:"Goblin",n:37,lore:"Goblins pilham as minas em enxames."},
-    {target:"Orc",n:41,lore:"Orcs de guerra avançam sobre o vilarejo."},
-    {target:"Xamã Goblin",n:46,lore:"Xamãs Goblins conjuram chamas malignas em seus rituais."},
-    {target:"Minotauro",n:50,lore:"Minotauros guardam o labirinto de magma."},
-    {boss:true,lore:"O <b>BALOR, senhor das chamas, ergue-se do vulcão. Vença-o para salvar o Sul.</b>"},
+    {target:"Imp",n:20,lore:"Imps atiçam incêndios pela aldeia durante a noite. Cace 20 Imps e apague o rastro de fogo."},
+    {target:"Goblin",n:22,lore:"Goblins saqueiam as caravanas na estrada de lava. Abata 22 Goblins e proteja o comércio."},
+    {target:"Bomb",n:25,lore:"As Bombs explodem ao menor toque e apavoram o povo. Destrua 25 Bombs com cuidado."},
+    {target:"Orc",n:28,lore:"Orcs marcham em bando rumo à caverna sagrada. Derrube 28 Orcs antes que a profanem."},
+    {target:"Ifrit",n:30,lore:"Ifrits guardam a subida da cratera. Cace 30 Ifrits para abrir caminho até o Balor."},
+    {boss:true,lore:"O <b>BALOR</b> se ergueu do magma, senhor das chamas. Enquanto ele viver, o Sul arde. Ponham fim nisso."}
   ],
   leste:[
-    {target:"Aranha Gigante",n:10,lore:"Aranhas Gigantes teceram redes mortais entre as árvores."},
-    {target:"Planta Carnívora",n:14,lore:"Plantas Carnívoras engoliram exploradores inteiros na trilha."},
-    {target:"Malboro",n:19,lore:"Malboros exalam um hálito venenoso que apodrece a mata."},
-    {target:"Cactuar",n:23,lore:"Cactuars disparam mil agulhas contra quem se aproxima."},
-    {target:"Licantropo",n:28,lore:"Licantropos uivam à lua e caçam em alcateia."},
-    {target:"Lobisomem",n:32,lore:"Lobisomens espalham sua maldição pela floresta."},
-    {target:"Górgona",n:37,lore:"Górgonas petrificam viajantes com o olhar."},
-    {target:"Mantícora",n:41,lore:"Mantícoras espreitam nas copas, ferrando com a cauda."},
-    {target:"Hidra",n:46,lore:"Hidras de muitas cabeças envenenam as nascentes."},
-    {target:"Slime",n:50,lore:"Slimes se multiplicam e cobrem o solo do pântano."},
-    {boss:true,lore:"O <b>TARRASQUE colossal emerge do bosque profundo. Enfrente-o para libertar o Leste.</b>"},
+    {target:"Aranha Gigante",n:20,lore:"Aranhas Gigantes teceram armadilhas nas trilhas da mata. Cace 20 Aranhas Gigantes e liberte os caminhos."},
+    {target:"Slime",n:22,lore:"Os Slimes se multiplicam e contaminam as nascentes. Abata 22 Slimes para limpar a água."},
+    {target:"Licantropo",n:25,lore:"Licantropos uivam nas noites de lua e atacam os batedores. Derrube 25 Licantropos."},
+    {target:"Cactuar",n:28,lore:"Os Cactuares disparam espinhos em quem se aproxima do bosque. Cace 28 Cactuares."},
+    {target:"Mantícora",n:30,lore:"Mantícoras rondam o ninho da rainha. Abata 30 Mantícoras para alcançar o Tarrasque."},
+    {boss:true,lore:"O <b>TARRASQUE</b> emergiu do fundo da floresta, colossal. Poucos viram ele e viveram pra contar. Provem que vocês são lenda."}
   ],
   oeste:[
-    {target:"Escorpião Gigante",n:10,lore:"Escorpiões Gigantes emboscam as caravanas nas dunas."},
-    {target:"Múmia",n:14,lore:"Múmias despertaram das tumbas profanadas."},
-    {target:"Esqueleto",n:19,lore:"Esqueletos guerreiros patrulham as ruínas antigas."},
-    {target:"Zumbi",n:23,lore:"Zumbis vagam pelo deserto atrás dos vivos."},
-    {target:"Pirata Esqueleto",n:28,lore:"Piratas Esqueletos guardam tesouros amaldiçoados."},
-    {target:"Cavaleiro da Morte",n:32,lore:"Cavaleiros da Morte comandam as legiões do pó."},
-    {target:"Assassino",n:37,lore:"Assassinos das areias atacam das sombras."},
-    {target:"Mimic",n:41,lore:"Mimics se disfarçam de baús para devorar saqueadores."},
-    {target:"Sombrio",n:46,lore:"Seres Sombrios drenam a vida sob o sol escaldante."},
-    {target:"Fantasma",n:50,lore:"Fantasmas assombram os oásis abandonados."},
-    {boss:true,lore:"O <b>LICH ergue seu exército das tumbas. Derrote-o para conquistar o Oeste.</b>"},
+    {target:"Esqueleto",n:20,lore:"Esqueletos se erguem das areias ao anoitecer. Cace 20 Esqueletos e acalme as dunas."},
+    {target:"Escorpião Gigante",n:22,lore:"Escorpiões Gigantes envenenam quem cruza o deserto. Abata 22 Escorpiões Gigantes."},
+    {target:"Múmia",n:25,lore:"Múmias saíram das tumbas amaldiçoadas. Derrube 25 Múmias para selar as ruínas."},
+    {target:"Zumbi",n:28,lore:"Zumbis cercam o oásis atrás dos vivos. Cace 28 Zumbis e proteja os viajantes."},
+    {target:"Assassino",n:30,lore:"Assassinos guardam a entrada da tumba do Lich. Abata 30 Assassinos para alcançá-lo."},
+    {boss:true,lore:"O <b>LICH</b> levantou seu exército das tumbas. Ele não teme a morte, já a venceu uma vez. Mostrem que ela ainda manda por aqui."}
   ]
 };
 const GREET={
-  norte:"Então os lendários mercenários Kaos e July chegaram ao Norte... Sou o Mago de Gelo, guardião destas geleiras. A fama de vocês cruza os mares — e eu preciso dessas lâminas.",
-  sul:"Kaos. July. A reputação de mercenários de vocês arde mais que meu fogo. Sou o Paladino de Fogo, e o Sul está em chamas. Ouçam o que ofereço.",
-  leste:"Vejo em vocês os mercenários de que todos sussurram. Sou o Druida da Floresta. A mata adoece e a água apodrece; talvez o aço de vocês possa curá-la.",
-  oeste:"Mercenários famosos, hein? Sou a Amazona do Deserto. Aqui reputação não mata a sede — trabalho, sim. Escutem a proposta."
+  norte:"Então é verdade, os tais mercenários Kaos e July vieram parar no Norte. Sou o Mago de Gelo e cuido dessas geleiras faz muito tempo. Ando precisando de gente com lâmina afiada. Topam um trabalho?",
+  sul:"Kaos, July. A fama de vocês corre mais rápido que fogo em palha seca. Sou o Paladino de Fogo, e como dá pra ver, o Sul não anda em paz. Deixa eu contar o que preciso.",
+  leste:"Já ouvi falar de vocês dois, todo mundo por aqui fala. Sou o Druida da Floresta. A mata está doente e a água apodrecendo. Quem sabe o aço de vocês resolve onde a natureza já não dá conta.",
+  oeste:"Então são vocês, os mercenários famosos. Eu sou a Amazona do Deserto. Por aqui fama não mata a sede, mas trabalho bom, sim. Escutem a proposta."
 };
 const MAIN=["norte","sul","leste","oeste"];
 const ROM=["I","II","III","IV","V","VI","VII","VIII","IX","X"];
@@ -447,7 +427,7 @@ function cap(s){return s.charAt(0)+s.slice(1).toLowerCase();}
 function rnd(a,b){return a+Math.random()*(b-a);}
 function portalOpen(){return MAIN.every(k=>ISLANDS[k].done>=QUESTS[k].length);}
 function upLabel(L){return 'Nv '+L;}
-function upMult(L){return 1+0.15*(L-1);}
+function upMult(L){return 1+0.04*(L-1);}
 function upCost(L){return Math.round(40+L*L*8);}
 function pipsOrLuxo(L){var pct=Math.round(L/UPMAX*100);return '<span class="lvl-pips" style="display:inline-flex;align-items:center;gap:6px">'+'<b style="color:var(--cyan);font-size:11px">Nv '+L+'/'+UPMAX+'</b>'+'<span style="display:inline-block;width:56px;height:6px;background:#0d1830;border:1px solid #2a3d63;border-radius:3px;overflow:hidden">'+'<span style="display:block;height:100%;width:'+pct+'%;background:linear-gradient(90deg,#39d0ff,#7af5c8)"></span></span></span>';}
 function initHeroesFull(){for(let i=0;i<2;i++){heroHP[i]=maxHP(i);heroMP[i]=maxMP(i);heroDefBuff[i]=0;}}
@@ -461,7 +441,7 @@ function renderParty(){
   document.getElementById('xpFill').style.width=(level>=LMAX?100:Math.min(100,xp/xpToNext()*100))+'%';
   document.getElementById('xpTxt').textContent=level>=LMAX?'MÁX':(xp+'/'+xpToNext());
   document.getElementById('partyBars').innerHTML=HEROES.map((hh,i)=>
-    '<div class="prow '+(heroIndex===i?'sel':'')+'"><div class="pn"><span>'+hh.name+(heroDefBuff[i]>0?' 🛡'+heroDefBuff[i]:'')+((battle&&battle.taunt>0&&i===0)?' 🎯':'')+'</span></div>'+
+    '<div class="prow '+(heroIndex===i?'sel':'')+'"><div class="pn"><span>'+hh.name+(heroDefBuff[i]>0?' 🛡'+heroDefBuff[i]:'')+((battle&&battle.taunt>0&&i===0)?' 🎯':'')+(heroHP[i]<=0?' \u2620':'')+'</span></div>'+
     '<div class="minibar hp"><span style="width:'+Math.max(0,heroHP[i]/maxHP(i)*100)+'%"></span><em>'+Math.max(0,Math.round(heroHP[i]))+'/'+maxHP(i)+'</em></div>'+
     '<div class="minibar mp"><span style="width:'+Math.max(0,heroMP[i]/maxMP(i)*100)+'%"></span><em>MP '+Math.round(heroMP[i])+'</em></div></div>').join('');
 }
@@ -484,7 +464,7 @@ function renderActions(){
   let html=h.actions.map(a=>{
     if(a.type==='bribe'&&!canBribe)return '';
     const cost=a.mp||0,dis=!myTurn||heroMP[i]<cost;
-    return '<button class="act-btn'+(a.type==='bribe'?' special':'')+(dis?' disabled':'')+'" onclick="heroAct(\''+a.key+'\')">'+ICON[a.icon]+'<span class="an">'+a.short+'</span><span class="ac">'+(a.type==='bribe'?'5%◆':(cost>0?cost+'mp':'—'))+'</span></button>';
+    return '<button class="act-btn'+(a.type==='bribe'?' special':'')+(dis?' disabled':'')+'" onclick="heroAct(\''+a.key+'\')">'+ICON[a.icon]+'<span class="an">'+a.short+'</span><span class="ac">'+(a.type==='bribe'?'5%◆':(cost>0?cost+'mp':'livre'))+'</span></button>';
   }).join('');
   html+='<button class="act-btn item'+((!myTurn||potLife<=0)?' disabled':'')+'" onclick="usePot(\'life\')">'+ICON.potlife+'<span class="an">P.Vida</span><span class="ac">x'+potLife+'</span></button>';
   html+='<button class="act-btn item'+((!myTurn||potMana<=0)?' disabled':'')+'" onclick="usePot(\'mana\')">'+ICON.potmana+'<span class="an">P.Mana</span><span class="ac">x'+potMana+'</span></button>';
@@ -514,11 +494,11 @@ function clickIsland(k){
 function showLore(k){
   const isl=ISLANDS[k];
   document.getElementById('loreArt').innerHTML=artHTML('leader',isl.leaderArt);
-  document.getElementById('loreName').textContent=isl.leader+' — '+isl.name;
+  document.getElementById('loreName').textContent=isl.leader+', '+isl.name;
   const desc=document.getElementById('questDesc'), btns=document.getElementById('questBtns');
   if(k==='centro'){document.getElementById('loreName').textContent='Ladino das Sombras - Guardião da Ilha de Caça';
-    if(portalOpen()){ desc.innerHTML='<span style="color:var(--cyan)">Ladino das Sombras:</span><br>"O Portal se abriu. Além dele espreita <b>TIAMAT</b>, o dragão de cinco cabeças. Cace para se fortalecer... ou encare a besta."'; btns.innerHTML='<button class="btn red" onclick="startBoss()">TIAMAT — CHEFE FINAL ★</button> <button class="btn gold" onclick="startSide()">Caçar!</button>'; }
-    else { desc.innerHTML='<span style="color:var(--cyan)">Ladino das Sombras:</span><br>"Cace para sobreviver e se tornar forte. As feras daqui são mais fortes que vocês — é assim que se forja um mercenário. O portal abre ao conquistar as 4 ilhas."'; btns.innerHTML='<button class="btn gold" onclick="startSide()">Caçar!</button>'; }
+    if(portalOpen()){ desc.innerHTML='<span style="color:var(--cyan)">Ladino das Sombras:</span><br>"O Portal se abriu. Do outro lado espreita <b>TIAMAT</b>, o dragão de cinco cabeças. Se ainda não estão prontos, cacem mais um pouco. Se estão, é hora de encarar a besta."'; btns.innerHTML='<button class="btn red" onclick="startBoss()">Tiamat, o Chefe Final ★</button> <button class="btn gold" onclick="startSide()">Caçar!</button>'; }
+    else { desc.innerHTML='<span style="color:var(--cyan)">Ladino das Sombras:</span><br>"Cacem pra sobreviver e ficar mais fortes. As feras daqui são mais duras que vocês, e é apanhando delas que um mercenário se forja. O portal só abre quando as 4 ilhas caírem."'; btns.innerHTML='<button class="btn gold" onclick="startSide()">Caçar!</button>'; }
     return;
   }
   const qs=QUESTS[k];
@@ -526,34 +506,34 @@ function showLore(k){
   if(!isl.met){ desc.innerHTML='<span style="color:var(--cyan)">'+isl.leader+':</span><br>\u201C'+GREET[k]+'\u201D'; btns.innerHTML='<button class="btn gold" onclick="meetGuardian(activeIsland)">\u25BA OUVIR A MISS\u00c3O</button>'; return; }
   const q=qs[isl.done];
   if(q.boss){ desc.innerHTML='<b>Miss\u00e3o final:</b> '+q.lore; }
-  else{ desc.innerHTML=questProgressHTML(isl,q); }
+  else{ desc.innerHTML=questProgressHTML(isl,q,qs.length); }
   btns.innerHTML='<button class="btn gold" onclick="startFight(activeIsland)">'+((!q.boss&&isl.kills>0)?'CONTINUAR CA\u00c7ADA \u25BA':'ACEITAR MISS\u00c3O \u25BA')+'</button>';
 }
 function showEnding(){
   gameWon=true;
   document.getElementById('loreArt').innerHTML='<img class="intro-art" src="'+IMG.ending+'">';
-  document.getElementById('loreName').textContent='TIAMAT DERROTADO \u2014 ISLAND CRUX EST\u00c1 SALVA!';
-  document.getElementById('questDesc').innerHTML='<b style="color:var(--gold)">FIM DE JOGO \u2014 VIT\u00d3RIA!</b><br>Sob os rel\u00e2mpagos e a lava, as cinco cabe\u00e7as de <b>TIAMAT</b> tombaram. <b>Kaos</b> e <b>July</b>, os mercen\u00e1rios mais famosos do arquip\u00e9lago, entram para a lenda de Island Crux.<br><span style="color:var(--dim)">Obrigado por jogar! \u2014 Kafkaos</span>';
+  document.getElementById('loreName').textContent='Tiamat caiu. Island Crux está salva!';
+  document.getElementById('questDesc').innerHTML='<b style="color:var(--gold)">Fim de jogo. Vitória!</b><br>Debaixo dos relâmpagos e da lava, as cinco cabeças de <b>Tiamat</b> tombaram uma a uma. Kaos e July cumpriram o último contrato e viraram lenda em Island Crux.<br><span style="color:var(--dim)">Obrigado por jogar! Feito com carinho pelo Kafkaos.</span>';
   document.getElementById('questBtns').innerHTML='<button class="btn gold" onclick="clickIsland(\'centro\')">CONTINUAR JOGANDO</button>';
 }
 function meetGuardian(k){ISLANDS[k].met=true;showLore(k);}
-function questProgressHTML(isl,q){return '<b>Miss\u00e3o '+(isl.done+1)+'/11:</b> '+q.lore+'<br><span style="color:var(--gold)">Cace '+q.n+' '+q.target+' \u2014 '+isl.kills+'/'+q.n+'</span>';}
+function questProgressHTML(isl,q,total){return '<b>Miss\u00e3o '+(isl.done+1)+'/'+(total||6)+':</b> '+q.lore+'<br><span style="color:var(--gold)">Cace '+q.n+' '+q.target+': '+isl.kills+'/'+q.n+'</span>';}
 
-function makeMonster(def,tint,lv,boss){const hpS=boss?(2.2*(1+0.09*(lv-1))):(1.7*(1+0.16*(lv-1)));const atkS=boss?(1.5*(1+0.10*(lv-1))):(1.5*(1+0.09*(lv-1)));const hp=Math.round(def.hp*hpS);return {name:def.name,art:def.art,tint:tint,lv:lv,hp:hp,maxHp:hp,atk:Math.round(def.atk*atkS),frozen:0,dead:false,boss:!!boss};}
+function makeMonster(def,tint,lv,boss){const hpS=boss?(2.2*(1+0.09*(lv-1))):(1.7*(1+0.19*(lv-1)));const atkS=boss?(1.5*(1+0.10*(lv-1))):(1.5*(1+0.09*(lv-1)));const hp=Math.round(def.hp*hpS);return {name:def.name,art:def.art,tint:tint,lv:lv,hp:hp,maxHp:hp,atk:Math.round(def.atk*atkS),frozen:0,dead:false,boss:!!boss};}
 function startFight(k){
   const isl=ISLANDS[k],bio=BIO[isl.biome],qs=QUESTS[k];
   const q=qs[Math.min(isl.done,qs.length-1)];
   let enemies;
-  if(q.boss){enemies=[makeMonster(bio.boss,bio.tint,level,true)];}
+  if(q.boss){enemies=[makeMonster(bio.boss,bio.tint,level+(isl.lvb||0),true)];}
   else{
     const rr=Math.random();const n=rr<0.30?1:(rr<0.80?2:3);
     const target=bio.roster.find(function(m){return m.name===q.target;})||bio.roster[0];
-    enemies=[]; for(let i=0;i<n;i++){const def=(Math.random()<0.45)?target:bio.roster[Math.floor(Math.random()*bio.roster.length)];enemies.push(makeMonster(def,bio.tint,level,false));}
+    enemies=[]; for(let i=0;i<n;i++){const def=(Math.random()<0.5)?target:bio.roster[Math.floor(Math.random()*bio.roster.length)];enemies.push(makeMonster(def,bio.tint,level+(isl.lvb||0),false));}
   }
-  beginBattle(enemies,{island:k,stage:isl.done,type:'quest'},(q.boss?'CHEFE':'Ca\u00e7ar: '+q.target)+' \u2014 '+isl.name);
+  beginBattle(enemies,{island:k,stage:isl.done,type:'quest'},(q.boss?'Chefe da ilha, em ':'Caçada em ')+isl.name);
 }
-function startSide(){const bio=BIO.central;const rr=Math.random();const n=rr<0.30?1:(rr<0.80?2:3),enemies=[];for(let i=0;i<n;i++){const d=bio.roster[Math.floor(Math.random()*bio.roster.length)];enemies.push(makeMonster(d,bio.tint,level+2,false));}beginBattle(enemies,{type:'side'},'Caçada — feras mais fortes');}
-function startBoss(){beginBattle([makeMonster({name:"TIAMAT, o Dragão de Cinco Cabeças",art:"tiamat",hp:900,atk:70},"#b96bff",level,true)],{type:'boss'},'TIAMAT — CHEFE FINAL');}
+function startSide(){const bio=BIO.central;const rr=Math.random();const n=rr<0.30?1:(rr<0.80?2:3),enemies=[];for(let i=0;i<n;i++){const d=bio.roster[Math.floor(Math.random()*bio.roster.length)];enemies.push(makeMonster(d,bio.tint,level+2,false));}beginBattle(enemies,{type:'side'},'Caçada nas terras selvagens');}
+function startBoss(){beginBattle([makeMonster({name:"TIAMAT, o Dragão de Cinco Cabeças",art:"tiamat",hp:1000,atk:70},"#b96bff",level,true)],{type:'boss'},'Tiamat, o Chefe Final');}
 function beginBattle(enemies,meta,logMsg){
   battle={enemies,meta,turn:'player',firstAttack:false,bribeUsed:false,over:false,taunt:0};
   document.getElementById('inimigosPanel').style.backgroundImage="url('"+IMG.spiral+"')";
@@ -565,7 +545,7 @@ function beginBattle(enemies,meta,logMsg){
 
 /* ---------- combat ---------- */
 function aliveEnemies(){return battle.enemies.filter(e=>!e.dead);}
-function selectHero(i){heroIndex=i;renderParty();renderActions();}
+function selectHero(i){if(battle&&!battle.over&&heroHP[i]<=0){toast(HEROES[i].name+' está fora de combate');return;}heroIndex=i;renderParty();renderActions();}
 function floatOn(where,txt,type){let host;if(typeof where==='number')host=document.getElementById('esp'+where);else host=document.getElementById('partyBars');if(!host)return;const el=document.createElement('div');el.className='floatnum '+type;el.textContent=txt;el.style.left=(20+Math.random()*40)+'%';el.style.top=(10+Math.random()*30)+'%';host.appendChild(el);setTimeout(()=>el.remove(),820);}
 function hitFx(idx){const s=document.getElementById('esp'+idx);if(!s)return;s.classList.remove('hurt');void s.offsetWidth;s.classList.add('hurt');}
 function physDmg(i,a){return Math.max(1,Math.round(a.dmg*(pATK(i)/60)*upMult(upl[i][a.key]||1)*rnd(0.9,1.1)));}
@@ -577,10 +557,10 @@ function heroAct(key){
   if(a.type==='bribe'){tryBribe();return;}
   const cost=a.mp||0;if(heroMP[i]<cost){toast('MP insuficiente!');return;}
   heroMP[i]-=cost;b.firstAttack=true;const alive=aliveEnemies();
-  if(a.type==='heal_all'){for(let j=0;j<2;j++)if(heroHP[j]>0){const amt=Math.round(maxHP(j)*a.pct);heroHP[j]=Math.min(maxHP(j),heroHP[j]+amt);}floatOn('hero','+HP','heal');sfx('heal');setLog('July usou Heal — 35% de vida para os dois!');}
+  if(a.type==='heal_all'){for(let j=0;j<2;j++)if(heroHP[j]>0){const amt=Math.round(maxHP(j)*a.pct);heroHP[j]=Math.min(maxHP(j),heroHP[j]+amt);}floatOn('hero','+HP','heal');sfx('heal');setLog('July usou Heal e restaurou 35% da vida dos dois!');}
   else if(a.type==='phys_buff'){sfx('guard');heroDefBuff[i]=a.buff;b.taunt=a.buff;dmgEnemy(alive[0],physDmg(i,a));setLog('Kaos PROVOCOU os inimigos e reforçou a defesa por '+a.buff+' turnos!');}
   else if(a.type==='phys_area'||a.type==='mag_area'){sfx(a.type==='mag_area'?'fire':'slash');const dv=(a.type==='mag_area')?magDmg(i,a):physDmg(i,a);if(alive.length>1){alive.forEach(t=>dmgEnemy(t,dv));setLog(h.name+' acertou TODOS com '+a.name+'!');}else{dmgEnemy(alive[0],Math.round(dv*1.15));setLog(h.name+' usou '+a.name+'.');}}
-  else if(a.type==='freeze'){sfx('ice');const dv=magDmg(i,a);alive.forEach(function(t){dmgEnemy(t,dv);if(!t.dead){t.frozen=a.freeze;floatOn(battle.enemies.indexOf(t),'CONGELADO','frz');}});setLog('July congelou TODOS os inimigos em \u00e1rea!');}
+  else if(a.type==='freeze'){sfx('ice');const dv=magDmg(i,a);let res=false;alive.forEach(function(t){dmgEnemy(t,dv);if(!t.dead){if(t.boss){res=true;}else{t.frozen=a.freeze;floatOn(battle.enemies.indexOf(t),'CONGELADO','frz');}}});setLog(res?'O chefe resiste ao gelo! Os demais congelam.':'July congelou os inimigos em \u00e1rea!');}
   else if(a.type==='mag'){sfx('magic');dmgEnemy(alive[0],magDmg(i,a));setLog(h.name+' usou '+a.name+'.');}
   else{sfx('slash');dmgEnemy(alive[0],physDmg(i,a));setLog(h.name+' usou '+a.name+'.');}
   renderParty();renderEnemies();renderActions();refreshTop();
@@ -588,7 +568,7 @@ function heroAct(key){
   endPlayerTurn();
 }
 function usePot(kind){
-  const b=battle;if(!b||b.over||b.turn!=='player')return;const i=heroIndex;
+  const b=battle;if(!b||b.over||b.turn!=='player')return;const i=heroIndex;if(heroHP[i]<=0){toast('Herói fora de combate');return;}
   if(kind==='life'){if(potLife<=0){toast('Sem poção de vida');return;}if(heroHP[i]>=maxHP(i)){toast('HP cheio');return;}potLife--;const amt=Math.round(maxHP(i)*0.5);heroHP[i]=Math.min(maxHP(i),heroHP[i]+amt);floatOn('hero','+'+amt,'heal');setLog(HEROES[i].name+' bebeu poção de vida.');}
   else{if(potMana<=0){toast('Sem poção de mana');return;}if(heroMP[i]>=maxMP(i)){toast('MP cheio');return;}potMana--;const amt=Math.round(maxMP(i)*0.5);heroMP[i]=Math.min(maxMP(i),heroMP[i]+amt);floatOn('hero','+MP','heal');setLog(HEROES[i].name+' bebeu poção de mana.');}
   sfx('potion');renderParty();renderActions();refreshTop();
@@ -598,7 +578,7 @@ function tryBribe(){
   if(gold<100){toast('Precisa de 100\u25c6 para subornar');return;}
   const cost=Math.max(1,Math.round(gold*0.05));gold-=cost;b.bribeUsed=true;refreshTop();
   const avg=aliveEnemies().reduce((s,e)=>s+e.lv,0)/aliveEnemies().length;
-  const chance=Math.max(0.2,Math.min(0.7,0.65-0.04*avg));
+  const chance=aliveEnemies().some(function(e){return e.boss;})?0.05:Math.max(0.2,Math.min(0.7,0.65-0.04*avg));
   if(Math.random()<chance){setLog('Suborno funcionou! Inimigos eliminados sem luta (-'+cost+'\u25c6).');battle.enemies.forEach(e=>e.dead=true);renderEnemies();winBattle(true);}
   else{setLog('Suborno FALHOU! (-'+cost+'◆). Ainda é seu turno.');renderActions();}
 }
@@ -619,7 +599,7 @@ function enemyPhase(){
 function finishEnemyPhase(){
   const b=battle;if(b.over)return;
   for(let i=0;i<2;i++)if(heroDefBuff[i]>0)heroDefBuff[i]--;if(battle.taunt>0)battle.taunt--;
-  if(heroHP[0]<=0||heroHP[1]<=0){loseBattle();return;}
+  if(heroHP[0]<=0&&heroHP[1]<=0){loseBattle();return;}
   b.turn='player';document.getElementById('turnBanner').textContent='SEU TURNO';
   if(heroHP[heroIndex]<=0)heroIndex=heroHP[0]>0?0:1;
   renderParty();renderActions();
@@ -642,7 +622,7 @@ function winBattle(skipped){
         const got=b.enemies.filter(function(e){return e.name===q.target;}).length;
         isl.kills+=got;
         if(isl.kills>=q.n){isl.kills=0;isl.done++;extra='MISS\u00c3O CONCLU\u00cdDA!';if(isl.done>=qs.length)extra='ILHA '+b.meta.island.toUpperCase()+' CONQUISTADA!';for(var jj=0;jj<2;jj++){heroHP[jj]=maxHP(jj);heroMP[jj]=maxMP(jj);}}
-        else{huntGoes=true;prog=isl.kills+'/'+q.n+' '+q.target;if(b.meta.island===activeIsland)document.getElementById('questDesc').innerHTML=questProgressHTML(isl,q);}
+        else{huntGoes=true;prog=q.target+' '+isl.kills+'/'+q.n;if(b.meta.island===activeIsland)document.getElementById('questDesc').innerHTML=questProgressHTML(isl,q,qs.length);}
       }
     }
     if(portalOpen())extra+=' PORTAL ABERTO!';
@@ -670,13 +650,13 @@ function openStatus(){
   const mx=Math.max(...order.map(k=>eff[k]));
   const stats=order.map(k=>{const v=eff[k],pct=Math.min(100,v/mx*100);return '<span class="stat-name">'+k+'</span><span class="bar '+cls[k]+'"><span style="width:'+pct+'%"></span></span><span class="stat-val">'+v+'</span>';}).join('');
   const load=h.actions.map(a=>'<div class="ability">'+ICON[a.icon]+'<span class="aname">'+a.name+'</span><span class="adesc">'+a.desc+'</span>'+(a.up?pipsOrLuxo(upl[heroIndex][a.key]):'')+'</div>').join('');
-  openModal('STATUS — Nv '+level+'/'+LMAX,'<div class="hswitch"><button class="arrow-btn" onclick="switchHero(-1);openStatus()">◄</button><span style="color:var(--cyan)">'+cap(h.name)+'</span><button class="arrow-btn" onclick="switchHero(1);openStatus()">►</button></div><div class="char-grid"><div class="char-portrait"><div class="frame">'+artHTML('hero',h.art)+'</div></div><div class="char-info"><h3>'+h.name+'</h3><div class="role">'+h.role+'</div><div class="char-lore">'+h.lore+'</div><div class="stats">'+stats+'</div></div></div><div class="loadout">'+load+'</div>');
+  openModal('Status · Nível '+level,'<div class="hswitch"><button class="arrow-btn" onclick="switchHero(-1);openStatus()">◄</button><span style="color:var(--cyan)">'+cap(h.name)+'</span><button class="arrow-btn" onclick="switchHero(1);openStatus()">►</button></div><div class="char-grid"><div class="char-portrait"><div class="frame">'+artHTML('hero',h.art)+'</div></div><div class="char-info"><h3>'+h.name+'</h3><div class="role">'+h.role+'</div><div class="char-lore">'+h.lore+'</div><div class="stats">'+stats+'</div></div></div><div class="loadout">'+load+'</div>');
 }
 function openLoadout(){const h=currentHero();const load=h.actions.map(a=>'<div class="ability">'+ICON[a.icon]+'<span class="aname">'+a.name+'</span><span class="adesc">'+a.desc+'</span><span class="adesc">'+(a.mp?a.mp+' MP':'sem custo')+'</span>'+(a.up?pipsOrLuxo(upl[heroIndex][a.key]):'')+'</div>').join('');openModal('ARMAS & FEITIÇOS','<div class="hswitch"><button class="arrow-btn" onclick="switchHero(-1);openLoadout()">◄</button><span style="color:var(--cyan)">'+cap(h.name)+'</span><button class="arrow-btn" onclick="switchHero(1);openLoadout()">►</button></div><div class="loadout" style="grid-template-columns:repeat(4,1fr)">'+load+'</div>');}
 function openForge(){
   const h=currentHero();const list=h.actions.filter(a=>a.up).map(a=>{const L=upl[heroIndex][a.key],mx=L>=UPMAX,cost=upCost(L),af=gold>=cost&&!mx;
     return '<div class="forge-item">'+ICON[a.icon]+'<div><div class="fi-name">'+a.name+'</div><div class="fi-stat">'+upLabel(L)+' · poder x<b>'+upMult(L).toFixed(2)+'</b>'+(mx?'':' → <span class="fi-lux">'+upLabel(L+1)+'</span> x<b>'+upMult(L+1).toFixed(2)+'</b>')+'</div>'+pipsOrLuxo(L)+'</div><div><span class="cost">'+(mx?'MÁXIMO (Nv 50)':'◆ '+cost)+'</span><button class="btn" '+(af?'':'disabled')+' onclick="forge(\''+a.key+'\')">'+(mx?'★':'FORJAR')+'</button></div></div>';}).join('');
-  openModal('FERREIRO — evolui até o Nv 50','<div class="hswitch"><button class="arrow-btn" onclick="switchHero(-1);openForge()">◄</button><span style="color:var(--cyan)">'+cap(h.name)+'</span><button class="arrow-btn" onclick="switchHero(1);openForge()">►</button><span class="gold">'+gold+'</span></div><div class="forge-list">'+list+'</div>');}
+  openModal('Ferreiro · evolui até o Nv 50','<div class="hswitch"><button class="arrow-btn" onclick="switchHero(-1);openForge()">◄</button><span style="color:var(--cyan)">'+cap(h.name)+'</span><button class="arrow-btn" onclick="switchHero(1);openForge()">►</button><span class="gold">'+gold+'</span></div><div class="forge-list">'+list+'</div>');}
 function forge(key){const L=upl[heroIndex][key];if(L>=UPMAX)return;const cost=upCost(L);if(gold<cost){toast('Ouro insuficiente!');return;}gold-=cost;upl[heroIndex][key]=L+1;refreshTop();toast('Forjado! '+upLabel(L+1));openForge();}
 function openBestiary(){let html='<div class="beast-grid">';Object.entries(BIO).forEach(([bio,d])=>{d.roster.forEach(m=>{html+='<div class="beast"><div class="bsp" style="color:'+d.tint+'">'+ICON[m.art]+'</div><div class="bname">'+m.name+'</div><div class="btype">'+bio+'</div></div>';});html+='<div class="beast boss"><div class="bsp" style="color:'+d.tint+'">'+ICON[d.boss.art]+'</div><div class="bname">'+d.boss.name+'</div><div class="btype">chefe · '+bio+'</div></div>';});html+='<div class="beast boss"><div class="bsp">'+artHTML('enemy','tiamat')+'</div><div class="bname">TIAMAT</div><div class="btype">chefe final</div></div></div>';openModal('BESTIÁRIO POR BIOMA',html);}
 function rollRarity(bossd){if(bossd)return Math.random()<0.30?RARITIES[3]:RARITIES[2];let r=Math.random()*100,acc=0;for(const R of RARITIES){acc+=R.w;if(r<acc)return R;}return RARITIES[0];}
@@ -690,13 +670,13 @@ function discardItem(id){if(isEquipped(id)){toast('Item equipado; remova antes d
 function rarTag(it){return '<span style="color:'+it.col+'">['+it.rarName+']</span>';}
 function openEquip(){const i=heroIndex,eq=equipped[i];
   const slotsHtml=SLOTS.map(function(s){const it=eq[s.key];
-    const inner=it?('<span style="color:'+it.col+'">'+it.name+'</span> '+rarTag(it)+'<br><span class="eqstats">'+itemStatsStr(it)+'</span><br><button class="btn" onclick="unequip('+i+',\''+s.key+'\')">Remover</button>'):'<span style="color:var(--dim)">— vazio —</span>';
+    const inner=it?('<span style="color:'+it.col+'">'+it.name+'</span> '+rarTag(it)+'<br><span class="eqstats">'+itemStatsStr(it)+'</span><br><button class="btn" onclick="unequip('+i+',\''+s.key+'\')">Remover</button>'):'<span style="color:var(--dim)">vazio</span>';
     return '<div class="eqslot"><div class="eqslot-ic" style="color:'+(it?(it.stint||it.col):'#33405c')+'">'+EQICON[s.key]+'</div><div class="eqslotname">'+s.name+'</div>'+inner+'</div>';}).join('');
   const inv=inventory.filter(function(it){return !isEquipped(it.id);});
   const invHtml=inv.length?inv.map(function(it){return '<div class="eqitem"><span class="eqic" style="color:'+(it.stint||it.col)+'">'+EQICON[it.slot]+'</span> <span style="color:'+it.col+'">'+it.name+'</span> '+rarTag(it)+' <span class="eqslottag">'+it.slotName+'</span><br><span class="eqstats">'+itemStatsStr(it)+'</span> <span class="eqset">('+it.setName+')</span><br><button class="btn gold" onclick="equipItem('+i+','+it.id+')">Equipar</button> <button class="btn" onclick="discardItem('+it.id+')">Descartar</button></div>';}).join(''):'<div style="color:var(--dim);padding:8px;grid-column:1/-1">Mochila vazia. Derrote inimigos nas ilhas para achar equipamentos.</div>';
   const tot='+'+equipBonus(i,'ATK')+' ATK · +'+equipBonus(i,'INT')+' INT · +'+equipBonus(i,'DEF')+' DEF · +'+equipBonus(i,'HP')+' HP';
   openModal('EQUIPAMENTOS','<div class="hswitch"><button class="arrow-btn" onclick="switchHero(-1);openEquip()">◄</button><span style="color:var(--cyan)">'+cap(HEROES[i].name)+'</span><button class="arrow-btn" onclick="switchHero(1);openEquip()">►</button></div><div class="eqtotal">Bônus total: '+tot+'</div><div class="eqslots">'+slotsHtml+'</div><div class="eqinv-label">MOCHILA ('+inv.length+')</div><div class="eqinv">'+invHtml+'</div>');}
-function switchHero(dir){heroIndex=(heroIndex+dir+HEROES.length)%HEROES.length;renderParty();renderActions();}
+function switchHero(dir){let ni=(heroIndex+dir+HEROES.length)%HEROES.length;if(battle&&!battle.over&&heroHP[ni]<=0)ni=heroIndex;heroIndex=ni;renderParty();renderActions();}
 
 function fitStage(){const sw=896,sh=414;const scale=mobileFit?Math.min(window.innerWidth/sw,window.innerHeight/sh):Math.max(window.innerWidth/sw,window.innerHeight/sh);document.getElementById('stage').style.transform='scale('+scale+')';}
 window.addEventListener('resize',fitStage);
